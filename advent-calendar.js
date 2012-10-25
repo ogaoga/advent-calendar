@@ -1,4 +1,13 @@
 if (Meteor.is_client) {
+
+  Accounts.ui.config({
+    requestPermissions: {
+      github: ['user'],
+      google: ['https://www.googleapis.com/auth/userinfo.profile']
+    },
+    //passwordSignupFields: 'USERNAME_AND_OPTIONAL_EMAIL'
+  });
+
   Template.hello.greeting = function () {
     return "Welcome to advent-calendar.";
   };
